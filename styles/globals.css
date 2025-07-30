@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 18px; /* Minimum 18pt for body text as requested */
+  
+  /* Pastel Zoo Palette - WCAG AA compliant */
+  --zoo-elephant: #E8E4F3; /* Soft purple-gray like elephant skin */
+  --zoo-flamingo: #FFE5E5; /* Gentle pink like flamingo feathers */
+  --zoo-giraffe: #FFF4E0; /* Warm cream like giraffe spots */
+  --zoo-frog: #E8F5E8; /* Soft green like frog skin */
+  --zoo-whale: #E3F2FD; /* Light blue like ocean water */
+  --zoo-accent: #FF6B9D; /* Bright coral for CTAs */
+  
+  --background: #FEFEFE;
+  --foreground: #2D3748;
+  --card: #FFFFFF;
+  --card-foreground: #2D3748;
+  --popover: #FFFFFF;
+  --popover-foreground: #2D3748;
+  --primary: #4A5568;
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--zoo-elephant);
+  --secondary-foreground: #2D3748;
+  --muted: #F7FAFC;
+  --muted-foreground: #718096;
+  --accent: var(--zoo-accent);
+  --accent-foreground: #FFFFFF;
+  --destructive: #E53E3E;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #F7FAFC;
+  --switch-background: #CBD5E0;
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --ring: #4A5568;
+  --chart-1: var(--zoo-flamingo);
+  --chart-2: var(--zoo-giraffe);
+  --chart-3: var(--zoo-frog);
+  --chart-4: var(--zoo-whale);
+  --chart-5: var(--zoo-elephant);
+  --radius: 12px; /* 12px radius as specified */
+  --sidebar: #FEFEFE;
+  --sidebar-foreground: #2D3748;
+  --sidebar-primary: #4A5568;
+  --sidebar-primary-foreground: #FEFEFE;
+  --sidebar-accent: #F7FAFC;
+  --sidebar-accent-foreground: #2D3748;
+  --sidebar-border: rgba(0, 0, 0, 0.1);
+  --sidebar-ring: #4A5568;
+}
+
+.dark {
+  --background: #1A202C;
+  --foreground: #F7FAFC;
+  --card: #2D3748;
+  --card-foreground: #F7FAFC;
+  --popover: #2D3748;
+  --popover-foreground: #F7FAFC;
+  --primary: #E2E8F0;
+  --primary-foreground: #1A202C;
+  --secondary: #4A5568;
+  --secondary-foreground: #F7FAFC;
+  --muted: #4A5568;
+  --muted-foreground: #A0AEC0;
+  --accent: var(--zoo-accent);
+  --accent-foreground: #FFFFFF;
+  --destructive: #FC8181;
+  --destructive-foreground: #1A202C;
+  --border: #4A5568;
+  --input: #4A5568;
+  --ring: #718096;
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --chart-1: var(--zoo-flamingo);
+  --chart-2: var(--zoo-giraffe);
+  --chart-3: var(--zoo-frog);
+  --chart-4: var(--zoo-whale);
+  --chart-5: var(--zoo-elephant);
+  --sidebar: #2D3748;
+  --sidebar-foreground: #F7FAFC;
+  --sidebar-primary: #E2E8F0;
+  --sidebar-primary-foreground: #1A202C;
+  --sidebar-accent: #4A5568;
+  --sidebar-accent-foreground: #F7FAFC;
+  --sidebar-border: #4A5568;
+  --sidebar-ring: #718096;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Zoo palette custom colors */
+  --color-zoo-elephant: var(--zoo-elephant);
+  --color-zoo-flamingo: var(--zoo-flamingo);
+  --color-zoo-giraffe: var(--zoo-giraffe);
+  --color-zoo-frog: var(--zoo-frog);
+  --color-zoo-whale: var(--zoo-whale);
+  --color-zoo-accent: var(--zoo-accent);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+/**
+ * Base typography with Nunito font and increased sizes for children
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: 2rem; /* 32px */
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    h2 {
+      font-size: 1.75rem; /* 28px */
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    h3 {
+      font-size: 1.5rem; /* 24px */
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    h4 {
+      font-size: 1.25rem; /* 20px */
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    p {
+      font-size: 1.125rem; /* 18px minimum as requested */
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: 1.125rem; /* 18px */
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    button {
+      font-size: 1.125rem; /* 18px */
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    input {
+      font-size: 1.125rem; /* 18px */
+      font-weight: var(--font-weight-normal);
+      line-height: 1.4;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Animation classes for 300ms ease-out motion */
+.transition-zoo {
+  transition: all 300ms ease-out;
+}
+
+/* Custom zoo-themed background classes */
+.bg-zoo-elephant { background-color: var(--zoo-elephant); }
+.bg-zoo-flamingo { background-color: var(--zoo-flamingo); }
+.bg-zoo-giraffe { background-color: var(--zoo-giraffe); }
+.bg-zoo-frog { background-color: var(--zoo-frog); }
+.bg-zoo-whale { background-color: var(--zoo-whale); }
+.bg-zoo-accent { background-color: var(--zoo-accent); }
+
+.text-zoo-accent { color: var(--zoo-accent); }
