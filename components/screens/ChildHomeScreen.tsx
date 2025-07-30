@@ -4,14 +4,15 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { AnimalAvatar } from '../AnimalAvatar';
 import { ZooButton } from '../ZooButton';
 import { Card } from '../ui/card';
-import { Mic, Settings, Clock } from 'lucide-react';
+import { Mic, Settings, Clock, MessageCircle } from 'lucide-react';
 
 interface ChildHomeScreenProps {
   onAskQuestion: () => void;
   onParentAccess: () => void;
+  onChat?: () => void;
 }
 
-export default function ChildHomeScreen({ onAskQuestion, onParentAccess }: ChildHomeScreenProps) {
+export default function ChildHomeScreen({ onAskQuestion, onParentAccess, onChat }: ChildHomeScreenProps) {
   const { currentChild, getAgeGroup, getCurrentAge } = useAge();
   const { t } = useLanguage();
 
@@ -78,9 +79,25 @@ export default function ChildHomeScreen({ onAskQuestion, onParentAccess }: Child
         </h1>
         
         {!isPreReader && (
-          <p className="text-center text-muted-foreground px-4">
+          <p className="text-center text-muted-foreground px-4 mb-4">
             Dotknij mikrofon i zadaj swoje pytanie głosowo
           </p>
+        )}
+
+        {/* Chat button */}
+        {onChat && (
+          <div className="mt-4">
+            <ZooButton
+              onClick={onChat}
+              size="lg"
+              className="px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-full flex items-center space-x-2"
+              icon={<MessageCircle className="w-5 h-5" />}
+            >
+              <span className="font-medium">
+                {isPreReader ? 'Czat' : 'Zadaj pytanie przez czat'}
+              </span>
+            </ZooButton>
+          </div>
         )}
       </div>
 

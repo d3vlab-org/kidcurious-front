@@ -10,6 +10,7 @@ import VoiceCaptureScreen from './screens/VoiceCaptureScreen';
 import AnswerViewScreen from './screens/AnswerViewScreen';
 import VideoSuggestionScreen from './screens/VideoSuggestionScreen';
 import ParentDashboardScreen from './screens/ParentDashboardScreen';
+import ChatScreen from './screens/ChatScreen';
 
 export type Screen = 
   | 'onboarding'
@@ -18,7 +19,8 @@ export type Screen =
   | 'voice-capture'
   | 'answer-view'
   | 'video-suggestion'
-  | 'parent-dashboard';
+  | 'parent-dashboard'
+  | 'chat';
 
 interface AppRouterProps {
   initialScreen?: Screen;
@@ -52,6 +54,7 @@ export function AppRouter({ initialScreen = 'onboarding' }: AppRouterProps) {
           <ChildHomeScreen 
             onAskQuestion={() => navigateTo('voice-capture')}
             onParentAccess={() => navigateTo('parent-dashboard')}
+            onChat={() => navigateTo('chat')}
           />
         );
       
@@ -86,6 +89,14 @@ export function AppRouter({ initialScreen = 'onboarding' }: AppRouterProps) {
         return (
           <ParentDashboardScreen 
             onBack={() => navigateTo('child-home')}
+          />
+        );
+      
+      case 'chat':
+        return (
+          <ChatScreen 
+            onBack={() => navigateTo('child-home')}
+            onHome={() => navigateTo('child-home')}
           />
         );
       
